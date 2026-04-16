@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>for you my princess</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500&family=Playfair+Display&display=swap" rel="stylesheet">
+
+<style>
+body {
+  margin: 0;
+  background: #fdf6f8;
+  font-family: 'Poppins', sans-serif;
+}
+
+/* password */
+#lock {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+input {
+  padding: 10px;
+  border-radius: 20px;
+  border: 1px solid #ddd;
+}
+
+button {
+  margin-top: 10px;
+  padding: 8px 15px;
+  border-radius: 20px;
+  border: none;
+  background: #ffcad4;
+}
+
+/* album */
+#album {
+  display: none;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+}
+
+/* book */
+.book {
+  position: relative;
+  width: 320px;
+  height: 450px;
+  perspective: 2000px;
+}
+
+/* page */
+.page {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: white;
+  border-radius: 15px;
+  padding: 20px;
+  box-sizing: border-box;
+
+  transform-origin: left;
+  transform-style: preserve-3d;
+  transition: transform 0.8s ease;
+  backface-visibility: hidden;
+}
+
+/* fix urutan */
+.page:nth-child(1){z-index:10;}
+.page:nth-child(2){z-index:9;}
+.page:nth-child(3){z-index:8;}
+.page:nth-child(4){z-index:7;}
+.page:nth-child(5){z-index:6;}
+.page:nth-child(6){z-index:5;}
+.page:nth-child(7){z-index:4;}
+.page:nth-child(8){z-index:3;}
+.page:nth-child(9){z-index:2;}
+.page:nth-child(10){z-index:1;}
+
+/* flip */
+.page.flipped {
+  transform: rotateY(-180deg);
+}
+
+/* cover */
+.cover {
+  background: #ffdbe3;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-family: 'Playfair Display';
+}
+
+/* photobooth */
+.photobooth img {
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+}
+
+.photobooth {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+  justify-items: center;
+}
+
+/* note */
+.note {
+  background: #fff0f4;
+  padding: 10px;
+  border-radius: 10px;
+  margin-top: 8px;
+  font-size: 0.85em;
+}
+
+/* nav */
+.buttons {
+  position: absolute;
+  bottom: 30px;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;4
+}
+.full-img {
+  width: 100%;
+  max-height: 220px;
+  object-fit: cover;
+  border-radius: 12px;
+  margin-bottom: 10px;
+}
+.page h2 {
+  font-size: 18px;
+  margin-bottom: 8px;
+}
+
+.page p {
+  font-size: 13px;
+  line-height: 1.5;
+  color: #444;
+}
+.page {
+  box-shadow: 0 10px 25px rgba(255, 182, 193, 0.2);
+}
+.small-text {
+  font-size: 11px;
+}
+</style>
+</head>
+
+<body>
+
+<!-- password -->
+<div id="lock">
+  <h3>enter password 🤍</h3>
+  <input id="pass">
+  <button onclick="checkPass()">open</button>
+</div>
+
+<!-- album -->
+<div id="album">
+
+<div class="book">
+
+<div class="page cover">
+  <h2>for my princess</h2>
+</div>
+
+<div class="page">
+  <h2>for you</h2>
+  <p> hai sayang,aku ga tau ke depannya bakal gimana. apakah bakal tetep kayak sekarang, atau berubah jadi sesuatu yang lain. tapi yang jelas, aku seneng ada di titik ini. di mana aku bisa kenal kamu, deket sama kamu, dan ngerasain hal-hal yang sebelumnya ga kepikiran.kalau suatu saat nanti semuanya berubah, aku cuma mau kamu tau satu hal: aku pernah bener-bener suka sama kamu, dan itu bukan hal yang main-main. dan kalau disuruh mulai lagi dari awal, aku tetep bakal milih jalan yang sama yang akhirnya ketemu kamu. and i’d still choose you, every time .</p>
+</div>
+
+<div class="page">
+  <h2>how luck i'm?</h2>
+  <p class="small-text"> kadang aku gak sadar, tapi aku lagi jadi orang paling beruntung cuma karena kamu ada di hidup aku.kamu gak perlu banyak usaha buat bikin aku nyaman, cukup hadir aja udah bikin hari aku terasa beda. ada cara kamu ngomong, cara kamu diem, bahkan hal kecil yang kamu lakuin, yang entah kenapa selalu nempel di pikiran aku. aku mungkin gak ketemu kamu, tapi aku temuin sesuatu yang jadi alasan aku bahagua. dan dari situ aku ngerti, ternyata ada orang yang bisa bikin hidup aku lebih tenang tanpa harus ribet jadi apa-apa. i'm lucky ti have you n to meet you bb.</p>
+</div>
+
+<div class="page">
+  <h2>our memories</h2>
+  <div class="photobooth">
+    <img src="foto_a.jpg" width="120px" height="120px">
+    <img src="foto_b.jpg" width="120px" height="120px">
+    <img src="foto_c.jpg" width="120px" height="120px">
+    <img src="foto_d.jpg" width="120px" height="120px">
+    <p>ini nunjukin kalo kita harus terus sama sama,kamu mau kan?ohh haruss haha love u.</p>
+  </div>
+</div>
+
+<div class="page">
+  <h2>little notes</h2>
+  <div class="note">you make things feel lighter.</div>
+  <div class="note">i like your presence, a lot.</div>
+  <div class="note">you’re my favorite part of the day.</div>
+   <div class="note">you're my happiness.</div>
+   <div class="note">you're my love.</div>
+   <div class="note">you're my everything.</div>
+</div>
+
+<div class="page">
+  <h2>special pictures</h2>
+  <img src="foto_g.jpg" class="full-img" height="220px">
+  <p>gemes ya? foto ini gemes karena ada kamunya,jadi lebih hidup dan berwarna</p>
+</div>
+
+<div class="page">
+  <h2>let's see my pretty princess</h2>
+  <div class="photobooth">
+    <img src="foto1.jpg" width="120px" height="120px">
+    <img src="foto2.jpg" width="120px" height="120px">
+    <img src="foto3.jpg" width="120px" height="120px">
+    <img src="foto4.jpg" width="120px" height="120px">
+    <p>OHH SHIT look at my princess, isn't she beautiful? </p>
+  </div>
+</div>
+
+<div class="page">
+  <h2>why are you beautiful?</h2>
+  <p>because.. cantik nya kamu bukan hal biasa, kamu cantik dari segi fisik dan hati kamu. jadi engga ada alesan lagi buat aku engga jatuh cinta sama kamu. terimakasih karena selalu jadi tempat paling nyaman buat aku, selalu jadi tempat aku tersenyum setiap harinya. sayangg jangan anggap diri kamu kurang yaa? kamu sudah lebih baik diantara orang' yang aku temuin. dan aku juga bakal selalu bilang bangga di setiap langkah dan hal kecil tentang kamu </p>
+</div>
+
+<div class="page">
+  <h2>last page</h2>
+  <p>tell me everything about you. aku mau tau semua hal tentang kamu, gimana kamu bisa bahagia, bisa ketawa, bisa gemesin? hahaha kasih tau aku semuanya yaa? sayang aku gaakan bosen dengerin cerita cerita kamu meski itu hal yang sangat kecil, tolong kasih tau aku  juga rasa nyaman dan engga nyaman dari aku ya? aku mau belajar jadi lebih baik buat kamu. semoga gift kecil ini bisa buat kamu tersenyum yaa? i love youu princess💕💕.</p>
+</div>
+
+</div>
+
+<div class="buttons">
+  <button onclick="prevPage()">back</button>
+  <button onclick="nextPage()">next</button>
+</div>
+
+</div>
+
+<script>
+let current = 0;
+const pages = document.querySelectorAll(".page");
+
+function nextPage() {
+  if (current < pages.length) {
+    pages[current].classList.add("flipped");
+    current++;
+  }
+}
+
+function prevPage() {
+  if (current > 0) {
+    current--;
+    pages[current].classList.remove("flipped");
+  }
+}
+
+function checkPass() {
+  let input = document.getElementById("pass").value;
+  if(input === "you're mine"){
+    document.getElementById("lock").style.display="none";
+    document.getElementById("album").style.display="flex";
+  } else {
+    alert("wrong password 🤍");
+  }
+}
+</script>
+
+</body>
+</html>
